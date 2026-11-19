@@ -1,6 +1,18 @@
 <!doctype html>
 <html lang="bn">
 <head>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.getRegistrations().then(function(regs) {
+    for (var r of regs) { r.unregister(); }
+  });
+}
+if ('caches' in window) {
+  caches.keys().then(function(names) {
+    for (var n of names) { caches.delete(n); }
+  });
+}
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
 <meta name="theme-color" content="#0a0f1d">
@@ -1113,6 +1125,7 @@ const MANAGED_PAGES = [
     repo: "thepastalive-docs-bot",
     workflow: "daily_documentary.yml",
     pageId: "1357435984129397",
+    fbToken: "EAAe1H3izQCYBTIZAJZCf3kDxYyVg3DxziLkrE3mPJ68KOnPmLIajfvfznlFItheoclTjYZBKm26jPpoFM19i0nAx2DZA6VsQOGtjltqkkgD2AEdyHEGKDZAKId7jxZAX1QoDScW0Q4EdECG0MZCZCLnzr2MCZBytkWDSdT2DpdHbceLOQnmZAkzSo02rrBmPTTffMGvzT8",
     icon: "🏛️",
     scheduleText: "সন্ধ্যা ৬টা, রাত ৯টা, রাত ৩টা",
     dailyTarget: 3,
@@ -1124,6 +1137,7 @@ const MANAGED_PAGES = [
     repo: "quran-tilawat-bot",
     workflow: "quran_poster.yml",
     pageId: "1430288070174104",
+    fbToken: "EAAe1H3izQCYBTIZAJZCf3kDxYyVg3DxziLkrE3mPJ68KOnPmLIajfvfznlFItheoclTjYZBKm26jPpoFM19i0nAx2DZA6VsQOGtjltqkkgD2AEdyHEGKDZAKId7jxZAX1QoDScW0Q4EdECG0MZCZCLnzr2MCZBytkWDSdT2DpdHbceLOQnmZAkzSo02rrBmPTTffMGvzT8",
     icon: "📖",
     scheduleText: "প্রতি ঘণ্টায় ১টি করে (সকাল থেকে রাত)",
     dailyTarget: 10,
@@ -1135,6 +1149,7 @@ const MANAGED_PAGES = [
     repo: "jannat-islamic-bot",
     workflow: "daily_post.yml",
     pageId: "1251877234677514",
+    fbToken: "EAAe1H3izQCYBTOClU3rmKqKwVhr0IyviMbUrbOKdM6WshOS3Lh5EHjffaAcgBKzmdkSvd8pRDS4g6J612gSwui1hM6yvtOwbZBV600Me8JDOXAHk5mDffTNfuXvd4m0qlzABhqB9KpNGmplika1nLrVhMcJBtP6Fl7MnGvHj3CZBKUea3DBhlhj9RQ3CadSpFl",
     icon: "🌙",
     scheduleText: "সারাদিন প্রতি ২০ মিনিট পর পর",
     dailyTarget: 72,
@@ -1146,6 +1161,7 @@ const MANAGED_PAGES = [
     repo: "islamic-waz-shorts-bot",
     workflow: "waz_poster.yml",
     pageId: "1541701802352983",
+    fbToken: "EAAe1H3izQCYBTDOpKlJZAxRSHI1BYDzKy5ZC2bZAWi4XTtui2ZC12j3V6oDLfD78HzYDjtStPvkqdzGmb7QyUtLbbPftqhLngyPK6udrc0Ky6eaX6ElOL6FcbwK01VD6irDCnU6k5QPmVl3zwugUyDS6g7Jh3Cy0Xbq7D1ucrOjRjDR1XiW595wjDewAKu9aniZBe",
     icon: "🕋",
     scheduleText: "সকাল ৭:৩০, ৯:৩০ এবং দুপুর ১টা–রাত ৮টা প্রতি ঘণ্টায়",
     dailyTarget: 10,
@@ -1157,10 +1173,11 @@ const MANAGED_PAGES = [
     repo: "heythere-viral-bot",
     workflow: "video_poster.yml",
     pageId: "1141891879017454",
+    fbToken: "EAAe1H3izQCYBTGb2IKEL5ZByNFlJt2WleDpz18F7nYlZCsVLZAw00sutM57OHkMAoZBTCbJdZB22lisYHbG9bT6gwdiU5umZC8784pnTHB2KQZCEDmqQjjjfeB550gHQPzzwLvjgx04xfEufa6T5v7A9iB1UGxsUj0nnIyoZCqKeVHaYHgZBQARtwBIVPOmBHCIfIU4fi",
     icon: "🎬",
-    scheduleText: "সকাল ৭:৩০, ৯:৩০ এবং দুপুর ১টা–রাত ৮টা প্রতি ঘণ্টায়",
-    dailyTarget: 10,
-    maxIntervalHours: 1.8
+    scheduleText: "দুপুর ১টা, বিকাল ৫টা, রাত ১০টা",
+    dailyTarget: 3,
+    maxIntervalHours: 8.5
   }
 ];
 
